@@ -1,5 +1,7 @@
 require('dotenv').config()
-const { TOKEN, API_BASE_URL } = process.env
+const { TOKEN, API_BASE_URL, CHARACTER } = process.env
+
+// run this with `node action/move.js x=1 y=2 character=Flyanne`
   
 async function movement() {
 
@@ -8,13 +10,13 @@ async function movement() {
   // Assign movement location / name here or in CLI command
   const xCoordinate = args.find(arg => arg.startsWith("x=")).split('=')[1] || 0
   const yCoordinate = args.find(arg => arg.startsWith("y=")).split('=')[1] || 0
-  const character = args.find(arg => arg.startsWith("character="))?.split('=')[1] || "Flyanne"
+  const parsedCharacter = args.find(arg => arg.startsWith("character="))?.split('=')[1] || CHARACTER 
 
   const newLocation = `{ "x": ${xCoordinate}, "y": ${yCoordinate}}`
 
   console.log('Moving character to new location:', newLocation)
       
-  const url = `${API_BASE_URL}/my/${character}/action/move`
+  const url = `${API_BASE_URL}/my/${parsedCharacter}/action/move`
 
   const options = {
     method: 'POST',
@@ -33,7 +35,7 @@ async function movement() {
       throw new Error('Failed to move character')
     }
     const { data } = await response.json();
-    console.log({ data })
+    console.log('Movement successful:', { data })
   } catch (error) {
     console.log({ error })
   }
