@@ -8,7 +8,6 @@ async function craft() {
 
   const args = process.argv
 
-  // Assign movement location / name here or in CLI command
   const codeArg = args.find(arg => arg.startsWith("code="))?.split('=')[1]
 
   if (!codeArg) {
