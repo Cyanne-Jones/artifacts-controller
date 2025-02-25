@@ -1,0 +1,23 @@
+{
+  "name": "artifacts-controller",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "move": "node ./action/move.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cyanne-Jones/artifacts-controller.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cyanne-Jones/artifacts-controller/issues"
+  },
+  "homepage": "https://github.com/Cyanne-Jones/artifacts-controller#readme",
+  "dependencies": {
+    "dotenv": "^16.4.7"
+  }
+}
