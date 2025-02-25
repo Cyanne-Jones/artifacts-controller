@@ -1,42 +1,42 @@
-require('dotenv').config();
-const server = "https://api.artifactsmmo.com";
-const token = process.env.TOKEN;
-
-const character = "Flyanne";
+require('dotenv').config()
+const { TOKEN, API_BASE_URL } = process.env
   
 async function movement() {
 
   const args = process.argv
 
-  const xCoordinate = args.find(arg => arg.startsWith("x=")).split('=')[1];
-  const yCoordinate = args.find(arg => arg.startsWith("y=")).split('=')[1];
+  // Assign movement location / name here or in CLI command
+  const xCoordinate = args.find(arg => arg.startsWith("x=")).split('=')[1] || 0
+  const yCoordinate = args.find(arg => arg.startsWith("y=")).split('=')[1] || 0
+  const character = args.find(arg => arg.startsWith("character="))?.split('=')[1] || "Flyanne"
 
-  const newLocation = (xCoordinate && yCoordinate) ? `{ "x": ${xCoordinate}, "y": ${yCoordinate}}` : '{ "x": 0, "y": -2 }';
+  const newLocation = `{ "x": ${xCoordinate}, "y": ${yCoordinate}}`
 
-  console.log('Moving character to new location:', newLocation);
+  console.log('Moving character to new location:', newLocation)
       
-  const url = server + '/my/' + character +'/action/move';
+  const url = `${API_BASE_URL}/my/${character}/action/move`
+  
   const options = {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
       Accept: 'application/json',
-      Authorization: 'Bearer ' + token
+      Authorization: 'Bearer ' + TOKEN
     },
     body: newLocation
-  };
+  }
   
   try {
     const response = await fetch(url, options);
     console.log({ response })
     if (!response.ok) {
-      throw new Error('Failed to move character');
+      throw new Error('Failed to move character')
     }
     const { data } = await response.json();
-    console.log({ data });
+    console.log({ data })
   } catch (error) {
-    console.log({ error });
+    console.log({ error })
   }
-  }
+}
   
-movement();
+movement()
