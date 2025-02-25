@@ -15,7 +15,7 @@ async function movement() {
   console.log('Moving character to new location:', newLocation)
       
   const url = `${API_BASE_URL}/my/${character}/action/move`
-  
+
   const options = {
     method: 'POST',
     headers: {
@@ -28,8 +28,8 @@ async function movement() {
   
   try {
     const response = await fetch(url, options);
-    console.log({ response })
     if (!response.ok) {
+      console.log({ response })
       throw new Error('Failed to move character')
     }
     const { data } = await response.json();
