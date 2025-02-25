@@ -20,3 +20,5 @@ Actions supported so far:
 Artifact's returned error statuses aren't the most helpful, so having [these docs in particular](https://api.artifactsmmo.com/docs/#/) to accompany you helps debug. Turns out there just wasn't enough wood in my inventory to craft and not a genuine 478 status error.
 
 Have funnnnnnnn 
+
+![Screenshot 2025-02-24 at 9 05 24 PM](https://github.com/user-attachments/assets/8fc93922-6d96-428f-bfab-aaa826550cd4)
