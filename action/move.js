@@ -7,9 +7,14 @@ async function movement() {
 
   const args = process.argv
 
-  // Assign movement location / name here or in CLI command
-  const xCoordinate = args.find(arg => arg.startsWith("x=")).split('=')[1] || 0
-  const yCoordinate = args.find(arg => arg.startsWith("y=")).split('=')[1] || 0
+  const xCoordinate = args.find(arg => arg.startsWith("x="))?.split('=')[1]
+  const yCoordinate = args.find(arg => arg.startsWith("y="))?.split('=')[1]
+
+  if (!xCoordinate && !yCoordinate) {
+    console.log('No x or y coordinate provided')
+    return 
+  }
+  
   const parsedCharacter = args.find(arg => arg.startsWith("character="))?.split('=')[1] || CHARACTER 
 
   const newLocation = `{ "x": ${xCoordinate}, "y": ${yCoordinate}}`
