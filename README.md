@@ -1,4 +1,4 @@
-# Artifacts Controller
+# 🧙🏻‍♂️Artifacts Controller 🎮
 ### Basic JS controller for [Artifacts MMORPG](https://www.artifactsmmo.com/)
 
 Use `.env.example` to populate a `.env` file with your token and character name, but the `API_BASE_URL` can stay the same
