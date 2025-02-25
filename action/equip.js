@@ -22,7 +22,7 @@ async function equip() {
   const body = `{ "code": "${codeArg}", "slot": "${slot}" }`
 
 
-  console.log(`Crafting item with code: ${codeArg}...`)
+  console.log(`Equipping item with code ${codeArg} to ${slot} slot...`)
       
   const url = `${API_BASE_URL}/my/${parsedCharacter}/action/equip`
 
