@@ -11,7 +11,7 @@ Actions supported so far:
 - Move (optional x, y args)
 - Basic POST actions without an HTTP body:
   - Rest
-  - Gather
+  - Gathering
   - Fight
 
 Have funnnnnnnn 
