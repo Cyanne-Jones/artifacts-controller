@@ -8,10 +8,13 @@ Call different functions from the CLI, each endpoint can take in a character nam
 Commands might look like `node action/move.js character=Fart x=2 y=1`, but each different file should have an example at the top of how it might be used! 
 
 Actions supported so far:
-- Move (optional x, y args)
+- Move (`x` and`y` args)
 - Basic POST actions without an HTTP body:
   - Rest
   - Gathering
   - Fight
+- Crafting (item `code` arg)
+- Unequip (`slot` arg)
+- Equip (item `code` and `slot` args)
 
 Have funnnnnnnn 
