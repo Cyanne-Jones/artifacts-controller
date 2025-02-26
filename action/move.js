@@ -2,6 +2,10 @@ require('dotenv').config()
 const { TOKEN, API_BASE_URL, CHARACTER } = process.env
 
 // run this with `node action/move.js x=1 y=2 character=Flyanne`
+
+// assuming locations of interest are the same for all players,
+// there's a collection of scripts in package.json to make this easier for default characters
+// to go to different workshops and resources
   
 const movement = async () => {
 
