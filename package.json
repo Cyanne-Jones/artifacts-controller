@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "move": "node ./action/move.js"
+    "gather": "node ./action/basic a=gathering",
+    "fight": "node ./action/basic a=fight",
+    "rest": "node ./action/basic a=rest"
   },
   "repository": {
     "type": "git",

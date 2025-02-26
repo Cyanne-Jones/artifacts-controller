@@ -5,11 +5,13 @@ const { TOKEN, API_BASE_URL, CHARACTER } = process.env
 
 // a = rest | gathering | fight
 
+// you can also run these without character the name arg with `npm run gather`, `npm run fight`, and `npm run rest`
+
 const basic = async () => {
 
   args = process.argv
 
-  const action = args.find(arg => arg.startsWith("a=")).split('=')[1] || "rest"
+  let action = args.find(arg => arg.startsWith("a=")).split('=')[1] || "rest"
   const parsedCharacter = args.find(arg => arg.startsWith("character="))?.split('=')[1] || CHARACTER 
 
   console.log('Performing action:', action)
