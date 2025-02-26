@@ -15,10 +15,12 @@ const recycle = async () => {
     return 
   }
   
-  const body = {
+  const body = JSON.stringify({
     code,
-    quantity: num
-  }
+    quantity: parseInt(num)
+  })
+
+  console.log({ body })
   
   const parsedCharacter = args.find(arg => arg.startsWith("character="))?.split('=')[1] || CHARACTER 
 
