@@ -14,7 +14,7 @@ const basicAction = async () => {
   let action = args.find(arg => arg.startsWith("action=")).split('=')[1] || "rest"
   const parsedCharacter = args.find(arg => arg.startsWith("character="))?.split('=')[1] || CHARACTER 
 
-  console.log('Performing action:', action)
+  console.log(`✨Performing action: ${action}✨`)
 
   const url = `${API_BASE_URL}/my/${parsedCharacter}/action/${action}`
   const options = {
@@ -31,10 +31,10 @@ const basicAction = async () => {
     const response = await fetch(url, options);
     if (!response.ok) {
       console.log({ response })
-      throw new Error('Failed to perform action')
+      throw new Error('😱 Oh no! Failed to perform action')
     }
     const { data } = await response.json();
-    console.log('Action successful:', { data })
+    console.log('✅ Action successful!')
   } catch (error) {
     console.log({ error })
   }

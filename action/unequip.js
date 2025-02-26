@@ -14,7 +14,7 @@ const basic = async () => {
 
   const body = `{ "slot": "${slot}" }`
 
-  console.log(`Unequipping from: ${slot} slot...`)
+  console.log(`✨ Unequipping from: ${slot} slot ✨`)
 
   const url = `${API_BASE_URL}/my/${parsedCharacter}/action/unequip`
   const options = {
@@ -31,10 +31,10 @@ const basic = async () => {
     const response = await fetch(url, options);
     if (!response.ok) {
       console.log({ response })
-      throw new Error(`Failed to unequip item from ${slot} slot`)
+      throw new Error(`😱 Oh no! Failed to unequip item from ${slot} slot`)
     }
     const { data } = await response.json();
-    console.log('Unequip successful:', { data })
+    console.log('✅ Unequip successful!')
   } catch (error) {
     console.log({ error })
   }

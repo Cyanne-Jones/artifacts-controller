@@ -24,10 +24,10 @@ const basicActionHTTPRequest = async ({action, character}) => {
     const response = await fetch(url, options);
     if (!response.ok) {
       console.log({ response })
-      throw new Error('Failed to perform action')
+      throw new Error('😱 Oh no! Failed to perform recursive action')
     }
     const { data } = await response.json();
-    console.log('Action successful:', { data })
+    console.log('✅ Action successful!')
     return data
   } catch (error) {
     console.log({ error })
@@ -42,21 +42,21 @@ const basicActionLoop = async () => {
   const actionCount = args.find(arg => arg.startsWith("count="))?.split('=')[1] || 1
   const parsedCharacter = args.find(arg => arg.startsWith("character="))?.split('=')[1] || CHARACTER 
 
-  console.log(`Performing recursive action: ${action} for ${actionCount} times`)
+  console.log(`🧙🏼‍♂️ Performing recursive action: ${action} for ${actionCount} times ✨`)
 
   try {
     for (let i = 0; i < actionCount; i++) { 
-      console.log(`Performing action ${i + 1} of ${actionCount}`)
+      console.log(`✨ Performing action ${i + 1} of ${actionCount} ✨`)
 
       const { cooldown } = await basicActionHTTPRequest({action, character: parsedCharacter})
 
       // only cooldown if there are more actions to perform
       if (i + 1 < actionCount )  {
-        console.log(`${cooldown.total_seconds}s cooldown time from ${action} action, ${actionCount - (i + 1)} remaining`)
+        console.log(`🥵 ${cooldown.total_seconds}s cooldown time from ${action} action, ${actionCount - (i + 1)} remaining 🥶`)
         await new Promise(resolve => setTimeout(resolve, cooldown.total_seconds * 1000))
       }
     }
-    console.log('All actions completed')
+    console.log('✅All actions completed!')
   } catch (error) {
     console.log({ error })
   }
