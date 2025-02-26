@@ -7,11 +7,11 @@ const { TOKEN, API_BASE_URL, CHARACTER } = process.env
 
 // there's some npm scripts I added to package.json for this also to make actions easier for default characters too!
 
-const basic = async () => {
+const basicAction = async () => {
 
   args = process.argv
 
-  let action = args.find(arg => arg.startsWith("a=")).split('=')[1] || "rest"
+  let action = args.find(arg => arg.startsWith("action=")).split('=')[1] || "rest"
   const parsedCharacter = args.find(arg => arg.startsWith("character="))?.split('=')[1] || CHARACTER 
 
   console.log('Performing action:', action)
@@ -40,4 +40,4 @@ const basic = async () => {
   }
 }
 
-basic()
+basicAction()

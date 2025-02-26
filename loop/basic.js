@@ -34,11 +34,11 @@ const basicActionHTTPRequest = async ({action, character}) => {
   }
 }
 
-const recursiveBasic = async () => {
+const basicActionLoop = async () => {
 
   args = process.argv
 
-  const action = args.find(arg => arg.startsWith("a=")).split('=')[1] || "rest"
+  const action = args.find(arg => arg.startsWith("action=")).split('=')[1] || "rest"
   const actionCount = args.find(arg => arg.startsWith("count="))?.split('=')[1] || 1
   const parsedCharacter = args.find(arg => arg.startsWith("character="))?.split('=')[1] || CHARACTER 
 
@@ -62,4 +62,4 @@ const recursiveBasic = async () => {
   }
 }
 
-recursiveBasic()
+basicActionLoop()
