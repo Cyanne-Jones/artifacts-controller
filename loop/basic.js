@@ -56,7 +56,7 @@ const basicActionLoop = async () => {
         await new Promise(resolve => setTimeout(resolve, cooldown.total_seconds * 1000))
       }
     }
-    console.log('✅All actions completed!')
+    console.log('✅ All actions in queue completed!')
   } catch (error) {
     console.log({ error })
   }
