@@ -18,6 +18,8 @@ Actions supported so far:
 - Crafting (item `code` arg)
 - Unequip (`slot` arg)
 - Equip (item `code` and `slot` args)
+- Delete (item `code` and `num` args)
+- Recycle (item `code` and `num` args)
 
 Artifact's returned error statuses aren't the most helpful, so having [these docs in particular](https://api.artifactsmmo.com/docs/#/) to accompany you helps debug. Turns out there just wasn't enough wood in my inventory to craft and not a genuine 478 status error.
 
