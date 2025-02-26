@@ -10,6 +10,8 @@
     "rest": "node ./action/basic action=rest",
     "gather5": "node ./loop/basic action=gathering count=5",
     "gather10": "node ./loop/basic action=gathering count=10",
+    "gather30": "node ./loop/basic action=gathering count=30",
+    "gather60": "node ./loop/basic action=gathering count=60",
     "fight5": "node ./loop/basic action=fight count=5",
     "rest5": "node ./loop/basic action=rest count=5",
     "workshop-mining": "node ./action/move x=1 y=5",
