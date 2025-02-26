@@ -24,7 +24,7 @@ const recycle = async () => {
 
   console.log(`✨ Recycling ${num} item(s): ${code} ✨`)
       
-  const url = `${API_BASE_URL}/my/${parsedCharacter}/action/recycle`
+  const url = `${API_BASE_URL}/my/${parsedCharacter}/action/recycling`
 
   const options = {
     method: 'POST',
