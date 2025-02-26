@@ -20,6 +20,7 @@
     "workshop-cooking": "node ./action/move x=1 y=1",
     "workshop-weapon": "node ./action/move x=2 y=1",
     "workshop-gear": "node ./action/move x=3 y=1",
+    "workshop-wood": "node ./action/move x=-2 y=-3",
     "bank": "node ./action/move x=4 y=1",
     "exchange": "node ./action/move x=5 y=1",
     "resource-copper": "node ./action/move x=2 y=0",
