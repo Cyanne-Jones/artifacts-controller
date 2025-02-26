@@ -3,7 +3,7 @@ const { TOKEN, API_BASE_URL, CHARACTER } = process.env
 
 // run this with `node action/move.js x=1 y=2 character=Flyanne`
   
-async function movement() {
+const movement = async () => {
 
   const args = process.argv
 
@@ -11,7 +11,7 @@ async function movement() {
   const yCoordinate = args.find(arg => arg.startsWith("y="))?.split('=')[1]
 
   if (!xCoordinate && !yCoordinate) {
-    console.log('No x or y coordinate provided')
+    console.log('😱 Oh no! No x and/or y coordinate provided')
     return 
   }
   
@@ -19,7 +19,7 @@ async function movement() {
 
   const newLocation = `{ "x": ${xCoordinate}, "y": ${yCoordinate}}`
 
-  console.log('Moving character to new location:', newLocation)
+  console.log(`✨ Moving character to new location: ${newLocation} ✨`)
       
   const url = `${API_BASE_URL}/my/${parsedCharacter}/action/move`
 
@@ -37,10 +37,10 @@ async function movement() {
     const response = await fetch(url, options);
     if (!response.ok) {
       console.log({ response })
-      throw new Error('Failed to move character')
+      throw new Error('😱 Oh no! Failed to move character')
     }
     const { data } = await response.json();
-    console.log('Movement successful:', { data })
+    console.log('✅ Movement successful!')
   } catch (error) {
     console.log({ error })
   }

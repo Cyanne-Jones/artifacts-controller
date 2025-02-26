@@ -6,7 +6,7 @@ const { TOKEN, API_BASE_URL, CHARACTER } = process.env
 // code = snake case item code, see docs for full list
 // slot = helmet | weapon | shield | body_armor | leg_armor | boots | ring1 | ring2 | amulet | artifact1 | artifact2 | artifact3 | utility1 | utility2 | bag | rune
   
-async function equip() {
+const equip = async () => {
 
   const args = process.argv
 
@@ -14,7 +14,7 @@ async function equip() {
   const slot = args.find(arg => arg.startsWith("slot="))?.split('=')[1] || "weapon"
 
   if (!codeArg && !slot) {
-    console.log('No item code or slot provided')
+    console.log('😱 Oh no! No item code or slot provided')
     return 
   }
 
@@ -22,7 +22,7 @@ async function equip() {
   const body = `{ "code": "${codeArg}", "slot": "${slot}" }`
 
 
-  console.log(`Equipping item with code ${codeArg} to ${slot} slot...`)
+  console.log(`✨ Equipping item with code ${codeArg} to ${slot} slot✨`)
       
   const url = `${API_BASE_URL}/my/${parsedCharacter}/action/equip`
 
@@ -42,10 +42,10 @@ async function equip() {
     const response = await fetch(url, options);
     if (!response.ok) {
       console.log({ response })
-      throw new Error('Failed to equip item')
+      throw new Error('😱 Oh no! Failed to equip item')
     }
     const { data } = await response.json();
-    console.log('Equipping successful:', { data })
+    console.log('✅ Equipping successful!')
   } catch (error) {
     console.log({ error })
   }

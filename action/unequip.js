@@ -5,7 +5,7 @@ const { TOKEN, API_BASE_URL, CHARACTER } = process.env
 
 // slot = helmet | weapon | shield | body_armor | leg_armor | boots | ring1 | ring2 | amulet | artifact1 | artifact2 | artifact3 | utility1 | utility2 | bag | rune
 
-async function basic() {
+const basic = async () => {
 
   args = process.argv
 
@@ -14,7 +14,7 @@ async function basic() {
 
   const body = `{ "slot": "${slot}" }`
 
-  console.log(`Unequipping from: ${slot} slot...`)
+  console.log(`✨ Unequipping from: ${slot} slot ✨`)
 
   const url = `${API_BASE_URL}/my/${parsedCharacter}/action/unequip`
   const options = {
@@ -31,10 +31,10 @@ async function basic() {
     const response = await fetch(url, options);
     if (!response.ok) {
       console.log({ response })
-      throw new Error(`Failed to unequip item from ${slot} slot`)
+      throw new Error(`😱 Oh no! Failed to unequip item from ${slot} slot`)
     }
     const { data } = await response.json();
-    console.log('Unequip successful:', { data })
+    console.log('✅ Unequip successful!')
   } catch (error) {
     console.log({ error })
   }
