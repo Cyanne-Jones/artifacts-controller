@@ -3,7 +3,7 @@ const { TOKEN, API_BASE_URL, CHARACTER } = process.env
 
 // run this with `node action/move.js x=1 y=2 character=Flyanne`
   
-async function movement() {
+const movement = async () => {
 
   const args = process.argv
 

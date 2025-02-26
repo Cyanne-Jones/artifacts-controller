@@ -5,7 +5,7 @@ const { TOKEN, API_BASE_URL, CHARACTER } = process.env
 
 // a = rest | gathering | fight
 
-async function basic() {
+const basic = async () => {
 
   args = process.argv
 

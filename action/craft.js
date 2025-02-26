@@ -4,7 +4,7 @@ const { TOKEN, API_BASE_URL, CHARACTER } = process.env
 // run this with `node action/craft.js code=wooden_staff character=Flyanne`
 // code = snake case item code, see docs for full list
   
-async function craft() {
+const craft = async () => {
 
   const args = process.argv
 

@@ -6,7 +6,7 @@ const { TOKEN, API_BASE_URL, CHARACTER } = process.env
 // code = snake case item code, see docs for full list
 // slot = helmet | weapon | shield | body_armor | leg_armor | boots | ring1 | ring2 | amulet | artifact1 | artifact2 | artifact3 | utility1 | utility2 | bag | rune
   
-async function equip() {
+const equip = async () => {
 
   const args = process.argv
 
