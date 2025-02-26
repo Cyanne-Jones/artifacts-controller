@@ -9,9 +9,9 @@
     "fight": "node ./action/basic action=fight",
     "rest": "node ./action/basic action=rest",
     "gather5": "node ./action/basic action=gathering count=5",
-    "gather10": "node ./loop/basic a=gathering count=10",
-    "fight5": "node ./loop/basic a=fight count=5",
-    "rest5": "node ./loop/basic a=rest count=5"
+    "gather10": "node ./loop/basic action=gathering count=10",
+    "fight5": "node ./loop/basic action=fight count=5",
+    "rest5": "node ./loop/basic action=rest count=5"
   },
   "repository": {
     "type": "git",
