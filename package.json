@@ -11,7 +11,22 @@
     "gather5": "node ./loop/basic action=gathering count=5",
     "gather10": "node ./loop/basic action=gathering count=10",
     "fight5": "node ./loop/basic action=fight count=5",
-    "rest5": "node ./loop/basic action=rest count=5"
+    "rest5": "node ./loop/basic action=rest count=5",
+    "workshop-mining": "node ./action/move x=1 y=5",
+    "workshop-alchemy": "node ./action/move x=2 y=3",
+    "workshop-jewelry": "node ./action/move x=1 y=1",
+    "workshop-cooking": "node ./action/move x=1 y=1",
+    "workshop-weapon": "node ./action/move x=2 y=1",
+    "workshop-gear": "node ./action/move x=3 y=1",
+    "bank": "node ./action/move x=4 y=1",
+    "exchange": "node ./action/move x=5 y=1",
+    "resource-copper": "node ./action/move x=2 y=0",
+    "resource-coal": "node ./action/move x=1 y=6",
+    "resource-iron": "node ./action/move x=1 y=7",
+    "resource-salmon": "node ./action/move x=-3 y=-4",
+    "resource-glowstem": "node ./action/move x=1 y=0",
+    "resource-mithril": "node ./action/move x=-2 y=13",
+    "resource-gold": "node ./action/move x=6 y=-3"
   },
   "repository": {
     "type": "git",
