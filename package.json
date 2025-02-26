@@ -27,6 +27,7 @@
     "resource-glowstem": "node ./action/move x=1 y=0",
     "resource-mithril": "node ./action/move x=-2 y=13",
     "resource-gold": "node ./action/move x=6 y=-3",
+    "resource-sunflower": "node ./action/move x=2 y=2",
     "tree-birch": "node ./action/move x=-1 y=6",
     "tree-ash": "node ./action/move x=-1 y=0",
     "tree-spruce": "node ./action/move x=2 y=6",
