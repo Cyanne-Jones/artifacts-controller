@@ -7,7 +7,7 @@ Run `npm i` in root to install dependencies
 Call different functions from the CLI, each endpoint can take in a character name to override the one in the `.env` file easily.
 Commands might look like `node action/move.js character=Fart x=2 y=1`, but each different file should have an example at the top of how it might be used! 
 
-Check out the `package.json` file for some more scripts I included to make actions a little easier too!
+Check out the `package.json` file for some more scripts I included to make actions a little easier too! Commands like `npm run gather10` to gather 10 of something (with logging and error handling, ooh!)
 
 Actions supported so far:
 - Move (`x` and`y` args)
