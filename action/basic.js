@@ -5,7 +5,7 @@ const { TOKEN, API_BASE_URL, CHARACTER } = process.env
 
 // a = rest | gathering | fight
 
-// you can also run these without character the name arg with `npm run gather`, `npm run fight`, and `npm run rest`
+// there's some npm scripts I added to package.json for this also to make actions easier for default characters too!
 
 const basic = async () => {
 
