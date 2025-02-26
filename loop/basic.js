@@ -42,7 +42,7 @@ const basicActionLoop = async () => {
   const actionCount = args.find(arg => arg.startsWith("count="))?.split('=')[1] || 1
   const parsedCharacter = args.find(arg => arg.startsWith("character="))?.split('=')[1] || CHARACTER 
 
-  console.log(`🧙🏼‍♂️ Performing recursive action: ${action} for ${actionCount} times ✨`)
+  console.log(`🧙🏼✨ Performing recursive action: ${action} for ${actionCount} times ✨`)
 
   try {
     for (let i = 0; i < actionCount; i++) { 
