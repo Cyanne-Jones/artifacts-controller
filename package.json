@@ -42,7 +42,10 @@
     "enemy-blue": "node ./action/move x=2 y=-1",
     "enemy-yellow": "node ./action/move x=4 y=-8",
     "eat-apple": "node ./action/use code=apple",
-    "eat-kfc": "node ./action/use code=cooked_chicken"
+    "eat-kfc": "node ./action/use code=cooked_chicken",
+    "fight-loop5": "node ./loop/fight-rest count=5",
+    "fight-loop10": "node ./loop/fight-rest count=10",
+    "fight-loop20": "node ./loop/fight-rest count=30"
   },
   "repository": {
     "type": "git",
