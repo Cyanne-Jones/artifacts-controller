@@ -37,10 +37,12 @@
     "tree-ash": "node ./action/move x=-1 y=0",
     "tree-spruce": "node ./action/move x=2 y=6",
     "tree-maple": "node ./action/move x=1 y=12",
-    "enemy-green-slime": "node ./action/move x=0 y=-1",
-    "enemy-red-slime": "node ./action/move x=1 y=-1",  
-    "enemy-blue-slime": "node ./action/move x=2 y=-1",
-    "enemy-yellow-slime": "node ./action/move x=4 y=-8"
+    "enemy-green": "node ./action/move x=0 y=-1",
+    "enemy-red": "node ./action/move x=1 y=-1",  
+    "enemy-blue": "node ./action/move x=2 y=-1",
+    "enemy-yellow": "node ./action/move x=4 y=-8",
+    "eat-apple": "node ./action/use code=apple",
+    "eat-kfc": "node ./action/use code=cooked_chicken"
   },
   "repository": {
     "type": "git",
