@@ -10,15 +10,15 @@ const use = async () => {
   const args = process.argv
 
   const codeArg = args.find(arg => arg.startsWith("code="))?.split('=')[1]
-  const slot = args.find(arg => arg.startsWith("count="))?.split('=')[1] || '1'
+  const count = args.find(arg => arg.startsWith("count="))?.split('=')[1] || '1'
 
-  if (!codeArg && !slot) {
+  if (!codeArg && !count) {
     console.log('😱 Oh no! No item code or count provided')
     return 
   }
 
   const parsedCharacter = args.find(arg => arg.startsWith("character="))?.split('=')[1] || CHARACTER
-  const body = `{ "code": "${codeArg}", "slot": "${slot}" }`
+  const body = `{ "code": "${codeArg}", "quantity": "${count}" }`
 
 
   console.log(`✨ Using ${count} item(s) with code ${codeArg}✨`)
