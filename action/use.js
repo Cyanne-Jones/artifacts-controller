@@ -1,30 +1,29 @@
 require('dotenv').config()
 const { TOKEN, API_BASE_URL, CHARACTER } = process.env
 
-// run this with `node action/equip.js code=wooden_staff slot=weapon character=Flyanne`
+// run this with `node action/use.js code=apple count=2 character=Flyanne`
 
 // code = snake case item code, see docs for full list
-// slot = helmet | weapon | shield | body_armor | leg_armor | boots | ring1 | ring2 | amulet | artifact1 | artifact2 | artifact3 | utility1 | utility2 | bag | rune
   
-const equip = async () => {
+const use = async () => {
 
   const args = process.argv
 
   const codeArg = args.find(arg => arg.startsWith("code="))?.split('=')[1]
-  const slot = args.find(arg => arg.startsWith("slot="))?.split('=')[1] || "weapon"
+  const count = args.find(arg => arg.startsWith("count="))?.split('=')[1] || '1'
 
-  if (!codeArg && !slot) {
-    console.log('😱 Oh no! No item code or slot provided')
+  if (!codeArg && !count) {
+    console.log('😱 Oh no! No item code or count provided')
     return 
   }
 
   const parsedCharacter = args.find(arg => arg.startsWith("character="))?.split('=')[1] || CHARACTER
-  const body = `{ "code": "${codeArg}", "slot": "${slot}" }`
+  const body = `{ "code": "${codeArg}", "quantity": "${count}" }`
 
 
-  console.log(`✨ Equipping item with code ${codeArg} to ${slot} slot✨`)
+  console.log(`✨ Using ${count} item(s) with code ${codeArg}✨`)
       
-  const url = `${API_BASE_URL}/my/${parsedCharacter}/action/equip`
+  const url = `${API_BASE_URL}/my/${parsedCharacter}/action/use`
 
   const options = {
     method: 'POST',
@@ -40,13 +39,13 @@ const equip = async () => {
     const response = await fetch(url, options);
     if (!response.ok) {
       console.log({ response })
-      throw new Error('😱 Oh no! Failed to equip item')
+      throw new Error('😱 Oh no! Failed to use item')
     }
     const { data } = await response.json();
-    console.log('✅ Equipping successful!')
+    console.log('✅ Use successful!')
   } catch (error) {
     console.log({ error })
   }
 }
   
-equip()
+use()

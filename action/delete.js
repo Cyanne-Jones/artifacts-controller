@@ -1,30 +1,28 @@
 require('dotenv').config()
 const { TOKEN, API_BASE_URL, CHARACTER } = process.env
 
-// run this with `node action/delete.js code=copper num=10 character=Flyanne`
+// run this with `node action/delete.js code=copper count=10 character=Flyanne`
   
 const deleteItem = async () => {
 
   const args = process.argv
 
   const code = args.find(arg => arg.startsWith("code="))?.split('=')[1]
-  const num = args.find(arg => arg.startsWith("num="))?.split('=')[1]
+  const count = args.find(arg => arg.startsWith("count="))?.split('=')[1]
 
-  if (!code && !num) {
+  if (!code && !count) {
     console.log('😱 Oh no! No code and/or quantity provided')
     return 
   }
   
   const body = JSON.stringify({
     code,
-    quantity: parseInt(num)
+    quantity: parseInt(count)
   })
-
-  console.log({ body })
   
   const parsedCharacter = args.find(arg => arg.startsWith("character="))?.split('=')[1] || CHARACTER 
 
-  console.log(`✨ Deleting ${num} item(s): ${code} ✨`)
+  console.log(`✨ Deleting ${count} item(s): ${code} ✨`)
       
   const url = `${API_BASE_URL}/my/${parsedCharacter}/action/delete`
 
