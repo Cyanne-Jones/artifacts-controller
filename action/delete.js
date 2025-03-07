@@ -19,8 +19,6 @@ const deleteItem = async () => {
     code,
     quantity: parseInt(num)
   })
-
-  console.log({ body })
   
   const parsedCharacter = args.find(arg => arg.startsWith("character="))?.split('=')[1] || CHARACTER 
 
