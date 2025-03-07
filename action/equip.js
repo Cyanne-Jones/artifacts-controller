@@ -26,8 +26,6 @@ const equip = async () => {
       
   const url = `${API_BASE_URL}/my/${parsedCharacter}/action/equip`
 
-  console.log({url})
-
   const options = {
     method: 'POST',
     headers: {
