@@ -57,7 +57,7 @@ const basicActionLoop = async () => {
       }
     }
     const totalSecondsElapsed = (new Date() - start) / 1000
-    console.log('✅ All actions in queue completed! ${totalSecondsElapsed}s total')
+    console.log(`✅ All actions in queue completed! ${totalSecondsElapsed}s total`)
   } catch (error) {
     console.log({ error })
   }
