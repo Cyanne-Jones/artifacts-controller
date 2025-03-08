@@ -35,7 +35,7 @@ const basicActionHTTPRequest = async ({action, character}) => {
 }
 
 const basicActionLoop = async () => {
-
+  const start = new Date()
   args = process.argv
 
   const action = args.find(arg => arg.startsWith("action=")).split('=')[1] || "rest"
@@ -56,7 +56,8 @@ const basicActionLoop = async () => {
         await new Promise(resolve => setTimeout(resolve, cooldown.total_seconds * 1000))
       }
     }
-    console.log('✅ All actions in queue completed!')
+    const totalSecondsElapsed = (new Date() - start) / 1000
+    console.log('✅ All actions in queue completed! ${totalSecondsElapsed}s total')
   } catch (error) {
     console.log({ error })
   }

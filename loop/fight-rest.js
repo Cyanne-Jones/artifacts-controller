@@ -42,7 +42,7 @@ const fightAndRestRequest = async ({character}) => {
 }
 
 const fightAndRestLoop = async () => {
-
+  const start = new Date()
   args = process.argv
   const parsedCharacter = args.find(arg => arg.startsWith("character="))?.split('=')[1] || CHARACTER 
   const actionCount = args.find(arg => arg.startsWith("count="))?.split('=')[1] || 1
@@ -56,11 +56,12 @@ const fightAndRestLoop = async () => {
       const { cooldown } = await fightAndRestRequest({character: parsedCharacter})
 
       if (i + 1 < actionCount )  {
-        console.log(`🥵 ${cooldown.total_seconds}s cooldown, ${actionCount - (i + 1)} total fight loops remaining 🥶`)
+        console.log(`🥵 ${cooldown.total_seconds}s cooldown, ${actionCount - (i + 1)} total fight loops remaining `)
         await new Promise(resolve => setTimeout(resolve, cooldown.total_seconds * 1000))
       }
     }
-    console.log('✅ All fight loops in queue completed!')
+    const totalSecondsElapsed = (new Date() - start) / 1000
+    console.log(`✅ All fight loops in queue completed, ${totalSecondsElapsed}s total`)
   } catch (error) {
     console.log({ error })
   }
