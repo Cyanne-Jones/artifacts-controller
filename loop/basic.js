@@ -57,7 +57,10 @@ const basicActionLoop = async () => {
       }
     }
     const totalSecondsElapsed = (new Date() - start) / 1000
-    console.log(`✅ All actions in queue completed! ${totalSecondsElapsed}s total`)
+
+    // 1 min, 2s total cooldown 
+    const formattedTime = `${Math.floor(totalSecondsElapsed / 60)}m ${Math.floor(totalSecondsElapsed % 60)}s`
+    console.log(`✅ All actions in queue completed! ${formattedTime} total`)
   } catch (error) {
     console.log({ error })
   }

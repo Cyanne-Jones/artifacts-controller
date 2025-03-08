@@ -61,7 +61,8 @@ const fightAndRestLoop = async () => {
       }
     }
     const totalSecondsElapsed = (new Date() - start) / 1000
-    console.log(`✅ All fight loops in queue completed, ${totalSecondsElapsed}s total`)
+    const formattedTime = `${Math.floor(totalSecondsElapsed / 60)}m ${Math.floor(totalSecondsElapsed % 60)}s`
+    console.log(`✅ All fight loops in queue completed, ${formattedTime} total`)
   } catch (error) {
     console.log({ error })
   }
