@@ -8,7 +8,7 @@ const recycle = async () => {
   const args = process.argv
 
   const code = args.find(arg => arg.startsWith("code="))?.split('=')[1]
-  const count = args.find(arg => arg.startsWith("count="))?.split('=')[1]
+  const count = args.find(arg => arg.startsWith("count="))?.split('=')[1] || '1'
 
   if (!code && !count) {
     console.log('😱 Oh no! No code and/or quantity provided')
