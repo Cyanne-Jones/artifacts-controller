@@ -10,7 +10,10 @@
     "rest": "node ./action/basic action=rest",
     "gather5": "node ./loop/basic action=gathering count=5",
     "gather10": "node ./loop/basic action=gathering count=10",
+    "gather20": "node ./loop/basic action=gathering count=20",
     "gather30": "node ./loop/basic action=gathering count=30",
+    "gather40": "node ./loop/basic action=gathering count=40",
+    "gather50": "node ./loop/basic action=gathering count=50",
     "gather60": "node ./loop/basic action=gathering count=60",
     "fight5": "node ./loop/basic action=fight count=5",
     "rest5": "node ./loop/basic action=rest count=5",
@@ -45,7 +48,9 @@
     "eat-kfc": "node ./action/use code=cooked_chicken",
     "fight-loop5": "node ./loop/fight-rest count=5",
     "fight-loop10": "node ./loop/fight-rest count=10",
-    "fight-loop20": "node ./loop/fight-rest count=30"
+    "fight-loop20": "node ./loop/fight-rest count=20",
+    "fight-loop30": "node ./loop/fight-rest count=30",
+    "fight-loop40": "node ./loop/fight-rest count=40"
   },
   "repository": {
     "type": "git",
