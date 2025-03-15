@@ -50,7 +50,10 @@
     "fight-loop10": "node ./loop/fight-rest count=10",
     "fight-loop20": "node ./loop/fight-rest count=20",
     "fight-loop30": "node ./loop/fight-rest count=30",
-    "fight-loop40": "node ./loop/fight-rest count=40"
+    "fight-loop40": "node ./loop/fight-rest count=40",
+    "craft-dagger": "node ./action/craft code=copper_dagger",
+    "craft-copper": "node ./action/craft code=copper",
+    "recycle-dagger": "node ./action/recycle code=copper_dagger"
   },
   "repository": {
     "type": "git",
